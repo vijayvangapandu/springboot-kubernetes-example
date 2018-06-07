@@ -7,4 +7,4 @@
 
 Setup Documentation is available in project wiki.
 
-Ecv: /inventory/ecv 
+Ecv: http://host:port/nventory/ecv
