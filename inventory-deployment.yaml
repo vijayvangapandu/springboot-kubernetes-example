@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: inventory
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: inventory
+        tier: backend
+    spec:
+      containers:
+      - name: inventory
+        image: localhost:5000/inventory:1.0-SNAPSHOT
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8080

@@ -1,2 +1,1 @@
-# springboot-kubernetes-example
-Template springboot application with Docker and Minikube
+# operation inventory management system
