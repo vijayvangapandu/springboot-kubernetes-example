@@ -24,7 +24,7 @@ node {
         //notifySlack()
         // build steps.
         stage('Checkout'){
-            git branch: 'master', changelog: true, credentialsId: '956422af-24d3-499d-9f1e-7b2337978ccb', url: 'https://github.com/vijayvangapandu/jenkins-kubernetes-example.git'
+            git branch: 'master', changelog: true, credentialsId: '956422af-24d3-499d-9f1e-7b2337978ccb', url: 'https://github.com/vijayvangapandu/springboot-kubernetes-example.git'
         }
 
         stage('Build'){
