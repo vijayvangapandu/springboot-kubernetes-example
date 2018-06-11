@@ -37,6 +37,12 @@ public class ActuatorEcvResource {
     
     @Inject HealthEndpoint healthEndpoint;
     
+    private final long contextLoadTime;
+    
+    public ActuatorEcvResource() {
+    	contextLoadTime = System.currentTimeMillis();
+    }
+    
     /**
      * Returns a simple string result for server status that is consistent with current eHarmony usage.
      * @return "SERVER UP" or "SERVER DOWN" and appropriate return code
@@ -58,4 +64,22 @@ public class ActuatorEcvResource {
         }
     }
     
+    @GET
+    @Path("/advanced")
+    public Response advancedEcv() {
+        Health health = healthEndpoint.invoke();
+        org.springframework.boot.actuate.health.Status status = health.getStatus();
+        
+        if (org.springframework.boot.actuate.health.Status.UP.equals(status)) {
+        	String ServerUpWithTime = STR_SERVER_UP + ":" + contextLoadTime;
+            return Response.status(Status.OK)
+                           .entity(ServerUpWithTime)
+                           .build();
+        }
+        else {
+            return Response.status(Status.SERVICE_UNAVAILABLE)
+                           .entity(STR_SERVER_DOWN)
+                           .build();
+        }
+    }
 }
