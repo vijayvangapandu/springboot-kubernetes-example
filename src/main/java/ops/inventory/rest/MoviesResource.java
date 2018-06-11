@@ -49,6 +49,13 @@ public class MoviesResource {
 		return movies;
 	}
 	
+	@GET
+	@Path("/movies/string")
+    public String getMoviesStr(final @Context HttpHeaders httpHeaders) {
+
+		return "Sky wars";
+	}
+	
 	class Movie {
 		String name;
 		String title;
