@@ -1,6 +1,10 @@
 package ops.inventory.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -29,6 +33,26 @@ public class MoviesResource {
 			final @Context HttpHeaders httpHeaders) {
 
 		
+	}
+	
+	@GET
+	@Path("/movies")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+    public List<Movie> getMovies(final @Context HttpHeaders httpHeaders) {
+
+		List<Movie> movies = new ArrayList<>();
+		
+		Movie movie1 = new Movie();
+		movie1.name = "Sky wars";
+		movies.add(movie1);
+		return movies;
+	}
+	
+	class Movie {
+		String name;
+		String title;
+		String actor;
 	}
 	
 }
