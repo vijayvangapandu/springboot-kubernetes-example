@@ -53,7 +53,7 @@ public class MoviesResource {
 	@Path("/movies/string")
     public String getMoviesStr(final @Context HttpHeaders httpHeaders) {
 
-		return "Sky wars";
+		return "Sky wars2";
 	}
 	
 	class Movie {
