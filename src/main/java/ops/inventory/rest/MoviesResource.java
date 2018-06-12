@@ -44,7 +44,7 @@ public class MoviesResource {
 		List<Movie> movies = new ArrayList<>();
 		
 		Movie movie1 = new Movie();
-		movie1.name = "Sky wars";
+		movie1.name = "Star Wars";
 		movies.add(movie1);
 		return movies;
 	}
@@ -53,7 +53,7 @@ public class MoviesResource {
 	@Path("/movies/string")
     public String getMoviesStr(final @Context HttpHeaders httpHeaders) {
 
-		return "Sky wars2";
+		return "Star Wars";
 	}
 	
 	class Movie {
