@@ -44,7 +44,7 @@ public class MoviesResource {
 		List<Movie> movies = new ArrayList<>();
 		
 		Movie movie1 = new Movie();
-		movie1.name = "Star Wars";
+		movie1.name = "Star Wars3";
 		movies.add(movie1);
 		return movies;
 	}
